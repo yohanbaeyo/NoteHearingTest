@@ -1,0 +1,15 @@
+.input-form {
+    width: 10rem;
+    height: 2rem;
+}
+
+.btn {
+    width: 5rem;
+    height: 2rem;
+    /*border-radius: 3px;*/
+    /*border-color: lightgrey;*/
+}
+
+.img {
+    width: 20rem;
+}
