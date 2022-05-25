@@ -89,7 +89,7 @@ function checkAns() {
 function playNotes() {
     let mySound = []
     for(let i=0; i<n; i++) {
-        mySound.push(answer[i][0].replace("#", "%23") + answer[i][1] + ".wav")
+        mySound.push("res/"+answer[i][0].replace("#", "%23") + answer[i][1] + ".wav")
     }
 
     // console.log(mySound)
