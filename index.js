@@ -75,6 +75,7 @@ function checkAns() {
         playNotes()
     }
 
+    console.log(total, totalCorrect)
     correctRateLabel.innerText = "정답률: " + Math.floor(totalCorrect/total * 100) + "%"
 
     document.getElementById("ansInput").value = ""

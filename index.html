@@ -11,23 +11,28 @@
     <div class="header">
         <h1>청음 연습</h1>
     </div>
-    <div>
-        <input class="input-form" type="text" id="cntInput" placeholder="몇 개 음 청음?(기본: 1)"/>
-        <button class="btn" type="button" onclick="initializeTest()">시험 시작</button>
-    </div>
-    <div>
-        <img class="img" src="piano.png" id="piano" onclick="//onPianoClick(event)" alt="피아노 사진">
-    </div>
-    <div>
-        <p id="correctRate">정답률: --%</p>
-        <input class="input-form" type="text" id="ansInput" placeholder="정답을 입력해주세요(구분기호 ',')" onkeyup="if(window.event.keyCode === 13) {checkAns()}">
-        <button type="button" class="btn" onclick="checkAns()">제출</button>
-        <button class="btn" type="button" onclick="playNotes()">소리 재생</button>
-
-    </div>
-    <div>
-        <h3>오답 리스트</h3>
-        <ul id="wrongList" style="list-style: none"></ul>
+    <div style="display: flex; flex-direction: row">
+        <div>
+            <div>
+                <input class="input-form" type="text" id="cntInput" placeholder="몇 개 음 청음?(기본: 1)"/>
+                <button class="btn" type="button" onclick="initializeTest()">
+                    <label for="ansInput">시험 시작</label>
+                </button>
+            </div>
+            <div>
+                <img class="img" src="piano.png" id="piano" onclick="//onPianoClick(event)" alt="피아노 사진">
+            </div>
+            <div>
+                <p id="correctRate">정답률: --%</p>
+                <input class="input-form" type="text" id="ansInput" placeholder="정답을 입력해주세요(구분기호 ',')" onkeyup="if(window.event.keyCode === 13) {checkAns()}">
+                <button type="button" class="btn" onclick="checkAns()">제출</button>
+                <button class="btn" type="button" onclick="playNotes()">소리 재생</button>
+            </div>
+        </div>
+        <div>
+            <h3>오답 리스트</h3>
+            <ul id="wrongList" style="list-style: none"></ul>
+        </div>
     </div>
 </body>
 </html>
