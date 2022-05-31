@@ -135,9 +135,13 @@ function playNext(i) {
 }
 
 function playOctave() {
-    new Audio('res/C%234.wav').play()
+    playOctaveWithRange(4, 4)
+}
 
-    for(let i=4; i<=4; i++) {
+function playOctaveWithRange(a, b) {
+    mySound = []
+
+    for(let i=a; i<=b; i++) {
         for(let j=0; j<12; j++) {
             mySound.push("res/"+keys[j].replace("#", "%23") + i + ".wav")
         }
@@ -146,6 +150,7 @@ function playOctave() {
     console.log(mySound)
 
     playNext(0)
+
 }
 
 // window.onload = initialize;
