@@ -13,3 +13,9 @@
 .img {
     width: 20rem;
 }
+
+#wrongList {
+    list-style: none;
+    height: 10vh;
+    column-width: 10rem;
+}

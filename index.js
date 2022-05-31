@@ -27,6 +27,8 @@ function initializeTest() {
     let inputVal = document.getElementById("cntInput")
     n = 0 + inputVal.value
     n = Math.max(n, 1)
+    wrongList.innerHTML = ""
+    wrongList.style.columnWidth = (n * 2 -0.5) + "rem"
     generateRandomNotes()
 }
 
@@ -108,11 +110,42 @@ function addWrongAnswer() {
     newLI.innerText = toAnsString()
     // newLI.appendChild(document.createTextNode("Ss"))
     wrongList.appendChild(newLI)
+    overflowTrigger(wrongList)
 }
 
 function initialize() {
     wrongList = document.getElementById("wrongList")
     correctRateLabel = document.getElementById("correctRate")
+}
+
+function overflowTrigger(element) {
+    if(element.scrollHeight > element.clientHeight) {
+        alert("Overflow")
+    }
+    // return element.scrollHeight > element.clientHeight
+}
+
+let mySound = []
+function playNext(i) {
+    if(i>=mySound.length) return
+
+    new Audio(mySound[i]).play().then(
+        () => playNext(i+1)
+    )
+}
+
+function playOctave() {
+    new Audio('res/C%234.wav').play()
+
+    for(let i=4; i<=4; i++) {
+        for(let j=0; j<12; j++) {
+            mySound.push("res/"+keys[j].replace("#", "%23") + i + ".wav")
+        }
+    }
+
+    console.log(mySound)
+
+    playNext(0)
 }
 
 // window.onload = initialize;
